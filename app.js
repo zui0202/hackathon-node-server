@@ -32,13 +32,14 @@ app.use(cors({ origin: "*" }));
 // connection test route
 // index path
 app.get("/", (req, res) => {
-    res.send("Test route");
+    res.send("index route");
 });
 
-// api router
+// test router
 app.use("/test", testRouter);
 
-// server connect
+// server - db connection
+// config/dbConnect 참고
 mongoose.connection.once("open", () => {
     console.log("DB Connected!");
     app.listen(PORT, () =>
