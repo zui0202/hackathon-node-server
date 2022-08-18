@@ -32,7 +32,7 @@ app.use(cors({ origin: "*" }));
 // connection test route
 // index path
 app.get("/", (req, res) => {
-    res.send("Test route");
+  res.send("Test route");
 });
 
 // api router
@@ -40,10 +40,10 @@ app.use("/test", testRouter);
 
 // server connect
 mongoose.connection.once("open", () => {
-    console.log("DB Connected!");
-    app.listen(PORT, () =>
-        console.log(`Server is running on http://localhost:${PORT}`)
-    );
+  console.log("DB Connected!");
+  app.listen(PORT, () =>
+    console.log(`Server is running on http://localhost:${PORT}`)
+  );
 });
 
 // server start command : npm run start
